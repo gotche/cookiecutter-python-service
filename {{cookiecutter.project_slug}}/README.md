@@ -3,7 +3,10 @@
 {{ cookiecutter.project_short_description }}
 
 # Development
-TODO
+
+```
+make create_dev_env
+```
 
 # Testing
 ```
