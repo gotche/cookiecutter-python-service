@@ -1,5 +1,6 @@
 #!/bin/bash
 
+{% if cookiecutter.use_pyenv == 'y' -%}
 # Use pyenv to handle virtual envs
 if ! [ -x "$(command -v pyenv)" ]; then
     echo "Please install pyenv: https://github.com/pyenv/pyenv#installation"
@@ -14,6 +15,7 @@ else
     echo "Activating virtualenv"
     pyenv local {{cookiecutter.project_slug}}
 fi
+{%- endif %}
 
 # Install dev requirements
 pip install -r requirements-dev.txt
