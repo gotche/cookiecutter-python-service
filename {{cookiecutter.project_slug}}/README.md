@@ -5,7 +5,7 @@
 # Development
 
 ```
-make create_dev_env
+make install_dev_env
 ```
 
 # Testing
