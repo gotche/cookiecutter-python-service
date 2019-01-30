@@ -14,4 +14,5 @@ update_requirements_files:
 	pur -r requirements.txt -r requirements-dev.txt
 
 edit_env_vars:
-	ansible-vault edit encrypted-env-vars
+	ansible-vault edit sensitive-env-vars
+	direnv allow .
