@@ -13,6 +13,7 @@ if [ -e .python-version ]; then
     echo "Found .python-version. Using it as virtualenv"
 else
     echo "Creating a virtualenv"
+    pyenv install 3.7.2 -s
     pyenv virtualenv -p python3.7 3.7.2 $CODENAME
     echo "Activating virtualenv"
     pyenv local $CODENAME
