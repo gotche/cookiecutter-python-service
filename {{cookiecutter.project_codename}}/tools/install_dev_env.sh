@@ -2,7 +2,7 @@
 
 CODENAME=$PROJECT_CODENAME
 
-{% if cookiecutter.use_pyenv == 'y' -%}
+{% if cookiecutter.use_pyenv == 'y' %}
 # Use pyenv to handle virtual envs
 if ! [ -x "$(command -v pyenv)" ]; then
     echo "Please install pyenv: https://github.com/pyenv/pyenv#installation"
@@ -18,7 +18,7 @@ else
     echo "Activating virtualenv"
     pyenv local $CODENAME
 fi
-{%- endif %}
+{% endif %}
 
 # Install dev requirements
 pip install -r requirements-dev.txt
@@ -48,11 +48,10 @@ fi
 
 direnv allow
 
-{% if cookiecutter.use_database == 'postgresql9.6' -%}
+{% if cookiecutter.use_database == 'postgresql9.6' %}
 # Populate env vars for development
 
 # Install database
 docker run --name {{cookiecutter.project_codename}} -e POSTGRES_USER=$DB_USER_LOCAL -e POSTGRES_DB=$DB_NAME_LOCAL -p $DB_PORT_LOCAL:$DB_PORT_LOCAL -d postgres:9.6-alpine
 docker start $DB_NAME_LOCAL
-
-{%- endif %}
+{% endif %}
