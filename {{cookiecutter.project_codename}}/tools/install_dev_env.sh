@@ -1,5 +1,7 @@
 #!/bin/bash
 
+CODENAME=$PROJECT_CODENAME
+
 {% if cookiecutter.use_pyenv == 'y' -%}
 # Use pyenv to handle virtual envs
 if ! [ -x "$(command -v pyenv)" ]; then
@@ -11,9 +13,9 @@ if [ -e .python-version ]; then
     echo "Found .python-version. Using it as virtualenv"
 else
     echo "Creating a virtualenv"
-    pyenv virtualenv -p python3.7 3.7.1 {{cookiecutter.project_slug}}
+    pyenv virtualenv -p python3.7 3.7.2 $CODENAME
     echo "Activating virtualenv"
-    pyenv local {{cookiecutter.project_slug}}
+    pyenv local $CODENAME
 fi
 {%- endif %}
 
