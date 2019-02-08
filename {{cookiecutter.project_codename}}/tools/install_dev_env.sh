@@ -23,6 +23,9 @@ fi
 # Install dev requirements
 pip install -r requirements-dev.txt
 
+# Initialize git repo
+git init
+
 # Install pre-commit hooks using the pre-commit framework
 pre-commit install
 
