@@ -3,5 +3,10 @@
     "project_codename": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "project_short_description": "A short description of the project",
     "version": "0.0.1",
-    "use_pyenv": "y"
+    "use_pyenv": "y",
+    "use_database": [
+        "postgresql9.6",
+        "mysql5.7",
+        "no"
+    ]
 }

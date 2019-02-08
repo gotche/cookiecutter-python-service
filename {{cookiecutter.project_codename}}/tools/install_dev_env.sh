@@ -36,11 +36,23 @@ if ! [ -x "$(command -v direnv)" ]; then
 fi
 
 if [[ -z "${ANSIBLE_VAULT_PASSWORD_FILE}" ]]; then
-    echo "Please set the team vault password in a file in "
-    echo "your filesystem and then add this to your .bashrc"
-    echo "export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible_vault.pass"
+    echo "Adding ANSIBLE_VAULT_PASSWORD_FILE env var to .bashrc"
+    echo "export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible_vault.pass" >> ~/.bashrc
+    export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible_vault.pass
     echo "Don't forget to populate the pass file"
+
+if [ ! -f "$ANSIBLE_VAULT_PASSWORD_FILE" ]; then
+    strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'> ~/.ansible_vault.pass
     exit 1
 fi
 
 direnv allow
+
+{% if cookiecutter.use_database == 'postgresql9.6' -%}
+# Populate env vars for development
+
+# Install database
+docker run --name {{cookiecutter.project_codename}} -e POSTGRES_USER=$DB_USER_LOCAL -e POSTGRES_DB=$DB_NAME_LOCAL -p $DB_PORT_LOCAL:$DB_PORT_LOCAL -d postgres:9.6-alpine
+docker start $DB_NAME_LOCAL
+
+{%- endif %}
