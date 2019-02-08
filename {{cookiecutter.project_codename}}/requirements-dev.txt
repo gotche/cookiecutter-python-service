@@ -3,6 +3,6 @@
 ansible-vault==1.2.0
 black==18.9b0
 coverage==4.5.2
-flake8==3.6.0
-pre-commit==1.12.0
-pytest==4.0.1
+flake8==3.7.5
+pre-commit==1.14.3
+pytest==4.2.0
