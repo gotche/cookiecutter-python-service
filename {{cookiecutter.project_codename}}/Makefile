@@ -8,7 +8,7 @@ coverage:
 	$(BROWSER) htmlcov/index.html
 
 install_dev_env:
-	PROJECT_CODENAME={{cookiecutter.project_codename}} ./tools/install_dev_env.sh
+	PROJECT_CODENAME=$$PROJECT_CODENAME ./tools/install_dev_env.sh
 
 update_requirements_files:
 	pur -r requirements.txt -r requirements-dev.txt
