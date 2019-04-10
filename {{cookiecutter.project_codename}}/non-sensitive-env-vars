@@ -1,5 +1,7 @@
 PROJECT_CODENAME={{cookiecutter.project_codename}}
 
+{% if cookiecutter.use_database == 'postgresql9.6' %}
 DB_USER_LOCAL=postgres
 DB_NAME_LOCAL={{cookiecutter.project_codename}}
 DB_PORT_LOCAL=5432
+{% endif %}
