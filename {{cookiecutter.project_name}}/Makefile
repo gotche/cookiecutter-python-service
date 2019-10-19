@@ -16,6 +16,10 @@ install_dev_env:
 update_requirements_files:
 	pur -r requirements.txt -r requirements-dev.txt
 
+compile_requirements:
+	pip install -r requirements.base
+	pip freeze > requirements.txt
+
 edit_env_vars:
 	ansible-vault edit sensitive-env-vars
 	direnv allow .
