@@ -1,0 +1,7 @@
+black
+cookiecutter==1.6.0
+flake8==3.*
+pur==5.*
+pytest==5.*
+pytest-cookies==0.*
+pytest-cov==2.*
