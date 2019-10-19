@@ -1,5 +1,6 @@
 {
     "project_name": "Name of the project",
+    "repository_name": "Name of the git repository to hold this project",
     "project_codename": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "project_short_description": "A short description of the project",
     "version": "0.0.1",

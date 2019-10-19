@@ -7,6 +7,9 @@ coverage:
 	coverage html
 	$(BROWSER) htmlcov/index.html
 
+setup_direnv:
+	./tools/setup_direnv.sh
+
 install_dev_env:
 	PROJECT_CODENAME=$$PROJECT_CODENAME ./tools/install_dev_env.sh
 

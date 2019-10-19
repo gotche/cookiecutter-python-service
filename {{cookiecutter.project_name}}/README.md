@@ -5,6 +5,7 @@
 # Development
 
 ```
+make setup_direnv
 make install_dev_env
 ```
 
