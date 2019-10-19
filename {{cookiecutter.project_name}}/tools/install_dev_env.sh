@@ -1,6 +1,8 @@
 #!/bin/bash
 
 CODENAME=$PROJECT_CODENAME
+PYTHON_VERSION="3.7.4"
+PYTHON_FAMILY="python3.7"
 
 {% if cookiecutter.use_pyenv == 'y' %}
 # Use pyenv to handle virtual envs
@@ -13,8 +15,8 @@ if [ -e .python-version ]; then
     echo "Found .python-version. Using it as virtualenv"
 else
     echo "Creating a virtualenv"
-    pyenv install 3.7.2 -s
-    pyenv virtualenv -p python3.7 3.7.2 $CODENAME
+    pyenv install $PYTHON_VERSION -s
+    pyenv virtualenv -p $PYTHON_FAMILY $PYTHON_VERSION $CODENAME
     echo "Activating virtualenv"
     pyenv local $CODENAME
 fi
