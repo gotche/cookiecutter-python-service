@@ -3,7 +3,7 @@
 sudo: false
 dist: xenial
 language: python
-python: 3.7.1
+python: 3.7.5
 
 script: make test
 
