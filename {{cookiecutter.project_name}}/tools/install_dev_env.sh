@@ -30,6 +30,7 @@ git init
 
 # Install pre-commit hooks using the pre-commit framework
 pre-commit install
+pre-commit autoupdate
 
 
 {% if cookiecutter.use_database == 'postgresql9.6' %}
