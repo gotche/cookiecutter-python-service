@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CODENAME=$PROJECT_CODENAME
-PYTHON_VERSION="3.7.5"
+PYTHON_VERSION="3.7.6"
 PYTHON_FAMILY="python3.7"
 
 {% if cookiecutter.use_pyenv == 'y' %}
