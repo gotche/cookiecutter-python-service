@@ -6,8 +6,8 @@
     "version": "0.0.1",
     "use_pyenv": "y",
     "use_database": [
-        "postgresql9.6",
-        "mysql5.7",
+        "postgresql",
+        "mysql",
         "no"
     ]
 }

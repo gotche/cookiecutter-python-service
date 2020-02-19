@@ -33,7 +33,7 @@ pre-commit install
 pre-commit autoupdate
 
 
-{% if cookiecutter.use_database == 'postgresql9.6' %}
+{% if cookiecutter.use_database == 'postgresql' %}
 # Populate env vars for development
 
 # Install database

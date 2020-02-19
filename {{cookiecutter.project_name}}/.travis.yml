@@ -9,3 +9,8 @@ script: make test
 
 install:
     - pip install -r requirements-dev.txt
+
+{% if cookiecutter.use_database != 'no' %}
+services:
+    - {{ cookiecutter.use_database }}
+{% endif %}
