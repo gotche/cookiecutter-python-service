@@ -5,6 +5,7 @@
     "project_short_description": "A short description of the project",
     "version": "0.0.1",
     "use_pyenv": "y",
+    "use_vault": "n",
     "use_database": [
         "postgresql",
         "mysql",

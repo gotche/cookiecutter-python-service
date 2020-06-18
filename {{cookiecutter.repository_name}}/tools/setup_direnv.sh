@@ -7,6 +7,7 @@ if ! [ -x "$(command -v direnv)" ]; then
     exit 1
 fi
 
+{% if cookiecutter.use_vault== 'n' %}
 if [[ -z "${ANSIBLE_VAULT_PASSWORD_FILE}" ]]; then
     echo "Adding ANSIBLE_VAULT_PASSWORD_FILE env var to .bashrc"
     echo "export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible_vault.pass" >> ~/.bashrc
@@ -18,5 +19,6 @@ if [ ! -f "$ANSIBLE_VAULT_PASSWORD_FILE" ]; then
     strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'> ~/.ansible_vault.pass
     exit 1
 fi
+{% endif %}
 
 direnv allow
