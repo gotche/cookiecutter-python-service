@@ -22,6 +22,13 @@ else
 fi
 {% endif %}
 
+{% if cookiecutter.use_vault== 'y' %}
+if [[ -z "${VAULT_TOKEN}" ]]; then
+    echo "You must have the VAULT_TOKEN environment variable set in your shell"
+    exit 1
+fi    
+{% endif %}
+
 # Install dev requirements
 pip install -r requirements-dev.txt
 
